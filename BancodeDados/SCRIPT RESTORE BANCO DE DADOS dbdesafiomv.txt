@@ -1,0 +1,3 @@
+cd C:\Program Files\PostgreSQL\12\bin
+SET PGPASSWORD=FC#201921 
+pg_restore.exe --host localhost --port 5432 --username postgres --dbname dbdesafiomv c:\MV\DesafioMV\BancodeDados\CNESATIVOS_13032020.backup 
