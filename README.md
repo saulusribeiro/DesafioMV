@@ -13,5 +13,11 @@ Guia de instalação
 
 Após a instalação dos Pré-requisitos, serão necessários a execução das seguintes atividades:
 
+- Instalação do JBoss Tools do Eclipse Market Place
 - Download do Repositório DesafioMV na pasta local C:\MV;
-- Importação do Projeto para a IDE Eclipse a partir
+- Importação do Projeto para a IDE Eclipse a partir da pasta C:\MV\DesafioMV
+- Atualizar Dependências do Projeto através da opção Mave->Update Project
+- Criar o Banco de Dados com usuário postgres e senha FC#201921 com o nome dbdesafiomv
+- O arquivo de DUMP do banco de dados será C:\MV\DesafioMV\BancodeDados\DUMP_POSTGRESQL_CNESATIVOS_13032020
+- O script de restore será SCRIPT RESTORE BANCO DE DADOS dbdesafiomv
+
