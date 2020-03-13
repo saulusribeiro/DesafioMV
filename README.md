@@ -19,5 +19,28 @@ Após a instalação dos Pré-requisitos, serão necessários a execução das s
 - Atualizar Dependências do Projeto através da opção Mave->Update Project
 - Criar o Banco de Dados com usuário postgres e senha FC#201921 com o nome dbdesafiomv
 - O arquivo de DUMP do banco de dados será C:\MV\DesafioMV\BancodeDados\DUMP_POSTGRESQL_CNESATIVOS_13032020
-- O script de restore será SCRIPT RESTORE BANCO DE DADOS dbdesafiomv
+- O script de restore será SCRIPT RESTORE BANCO DE DADOS dbdesafiomv.txt
+
+Guia de Funcionalidades da Aplicação
+
+- A aplicação foi desenvolvida na arquitetura MVC, cujas classes estão hospedadas com a seguinte organização:
+
+- br.com.mvsistemas.desafiomv.domain - Pacote das Classes de Definição dos Dados 
+- br.com.mvsistemas.desafiomv.dao    - Pacote das Classes de Acesso aos Dados
+- br.com.mvsistemas.desafiomv.bean   - Pacote das Classes de Modelo
+- br.com.mvsistemas.desafiomv.Util   - Pacote das Classes de Configuração
+
+Para exibição da consulta, foi elaborada a seguinte classe :
+
+- /src/main/webapp/CNESAtivos.xhtml
+
+- Funcionalidades Previstas
+
+- Seleção por SeleItemMenu das Unidades da Federação para filtrar base de Estabelecimentos de Saúdes Ativos;
+- Seleção por SeleItemMenu dos Tipod de Estabelecimentos de Saúde para filtrar base de Estabelecimentos Ativos;
+- Geração da Base Total para consulta em vídeo, através de navegação em tela a cada 10 estabelecimentos;
+- Filtragem por unidade da federação através de campo existente na coluna e ordenação opcional;
+- Filtragem por tipo de estabelecimento através de campo existente na coluna e ordenação opcional;
+-
+
 
