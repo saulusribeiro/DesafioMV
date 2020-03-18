@@ -13,12 +13,12 @@ import br.com.mvsistemas.desafiomv.domain.TipoEstabelecimento;
 import br.com.mvsistemas.desafiomv.util.HibernateUtil;
 
 public class CNESAtivosDAO {
-	
 	public List<CNESAtivos> listar(){
+		// Criteria é a tecnologia mais atual para consultas em Java
 		
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		try {
-			Criteria consulta = sessao.createCriteria(CNESAtivos.class);
+			Criteria consulta = sessao.createCriteria(CNESAtivos.class);  // serve para consultar qualquer classe
 			@SuppressWarnings("unchecked")
 			List<CNESAtivos> resultado = consulta.list();
 			return resultado;
@@ -36,10 +36,14 @@ public class CNESAtivosDAO {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		try {
 			Criteria consulta = sessao.createCriteria(CNESAtivos.class);
-			consulta.add(Restrictions.eq("estado",estado.getEstado()));
+	    	consulta.add(Restrictions.eq("estado",estado));
 			@SuppressWarnings("unchecked")
 			List<CNESAtivos> resultado = consulta.list();
-			return resultado;
+			return resultado; 
+			
+	
+				
+			
 		} catch (RuntimeException erro) {
 			throw erro;  
 		}finally {
@@ -54,7 +58,7 @@ public class CNESAtivosDAO {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		try {
 			Criteria consulta = sessao.createCriteria(CNESAtivos.class);
-			consulta.add(Restrictions.eq("tipo_estabelecimento",tipoestab.getTipo_estabelecimento()));
+			consulta.add(Restrictions.eq("tipo_estabelecimento",tipoestab));
 			@SuppressWarnings("unchecked")
 			List<CNESAtivos> resultado = consulta.list();
 			return resultado;
@@ -66,4 +70,6 @@ public class CNESAtivosDAO {
 		}
 		
 	}
+
+	
 }

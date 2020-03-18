@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
@@ -24,6 +25,7 @@ import br.com.mvsistemas.desafiomv.domain.TipoEstabelecimento;
 
 @SuppressWarnings("serial")
 @ManagedBean
+@ViewScoped
 
 public class CNESAtivosBean implements Serializable {
 
@@ -131,6 +133,8 @@ public class CNESAtivosBean implements Serializable {
 	
 
 		estado = (Estado) evento.getComponent().getAttributes().get("estadoSelecionado");
+		
+		Messages.addGlobalInfo("Estado selecionado "+ estado.getDescricao());
 
 		try {
 

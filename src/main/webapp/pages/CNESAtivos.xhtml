@@ -35,7 +35,7 @@
 			<p:commandButton value="Filtrar por UF"
 				actionListener="#{cNESAtivosBean.listarUF}"
 				update=":mensagem :formListar">
-				<f:attribute name="estadoSelecionado" value="#{cursorEstado}" />
+				<f:attribute name="estadoSelecionado" value="#{cNESAtivosBean.estado}" />
 
 			</p:commandButton>
 
@@ -54,14 +54,13 @@
 			<p:commandButton value="Filtrar por Tipo"
 				actionListener="#{cNESAtivosBean.listarTipo}"
 				update=":mensagem :formListar">
-				<f:attribute name="tipoSelecionado" value="#{cursorTipo}" />
+				<f:attribute name="tipoSelecionado" value="#{cNESAtivosBean.tipoestabelecimento}" />
 			</p:commandButton>
 		</p:panelGrid>
 
 		<p:panel>
 			<p:commandButton value="Exibir Todos Estabelecimentos"
-				actionListener="#{cNESAtivosBean.listar
-				}"
+				actionListener="#{cNESAtivosBean.listar}"
 				update=":mensagem :formListar">
 			</p:commandButton>
 			<p:commandButton value="Gera CSV Total"
@@ -105,21 +104,20 @@
 			</p:dataTable>
 		</p:panel>
 	</h:form>
-		<p:dialog header="CNES Ativos - Detalhe" widgetVar="detalhe"
-			enctype="multipart/form-data" draggable="true" resizable="true"
-			modal="true" closable="false">
-			<h:form id="formCadastro">
+	<p:dialog header="CNES Ativos - Detalhe" widgetVar="detalhe"
+		enctype="multipart/form-data" draggable="true" resizable="true"
+		modal="true" closable="false">
+		<h:form id="formCadastro">
 			<p:panelGrid id="panelCad" columns="2">
 				<p:outputLabel value="Código CNES : " />
-				<h:outputText value="#{cNESAtivosBean.cnesativos.codigo_cnes}">
-				</h:outputText>
+				<h:outputText value="#{cNESAtivosBean.cnesativos.codigo_cnes}" />
 				<p:outputLabel value="Código IBGE : " />
 				<h:outputText value="#{cNESAtivosBean.cnesativos.codigo_ibge}" />
 				<p:outputLabel value="Tipo Estabelecimento : " />
 				<h:outputText
-					value="#{cNESAtivosBean.cnesativos.tipo_estabelecimento}" />
+					value="#{cNESAtivosBean.cnesativos.tipo_estabelecimento.tipo_estabelecimento}" />
 				<p:outputLabel value="Nome Fantasia : " />
-				<h:outputText value="#{cNESativosBean.cnesativos.nome_fantasia}" />
+				<h:outputText value="#{cNESAtivosBean.cnesativos.nome_fantasia}" />
 				<p:outputLabel value="Tipo de Gestão : " />
 				<h:outputText value="#{cNESAtivosBean.cnesativos.tipo_gestao}" />
 				<p:outputLabel value="Logradouro : " />
@@ -131,14 +129,12 @@
 				<p:outputLabel value="CEP : " />
 				<h:outputText value="#{cNESAtivosBean.cnesativos.cep}" />
 				<p:outputLabel value="Estado : " />
-				<h:outputText value="#{cNESAtivosBean.cnesativos.estado}" />
+				<h:outputText value="#{cNESAtivosBean.cnesativos.estado.estado}" />
 				<p:outputLabel value="Município : " />
 				<h:outputText value="#{cNESAtivosBean.cnesativos.municipio}" />
 				<p:outputLabel value="Telefone : " />
 				<h:outputText value="#{cNESAtivosBean.cnesativos.telefone}" />
-			</p:panelGrid>
-			<p:panelGrid columns="2">
-				<h:outputText value="                        " />
+				<h:outputText value="" />
 				<p:commandButton value="Fechar" oncomplete="PF('detalhe').hide();" />
 			</p:panelGrid>
 		</h:form>
